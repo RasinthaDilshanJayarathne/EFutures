@@ -37,14 +37,14 @@ public class ProductController {
     }
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil updateProduct(@RequestBody ProductDTO customer){
-        productService.updateProduct(customer);
+    public ResponseUtil updateProduct(@RequestBody ProductDTO product){
+        productService.updateProduct(product);
         return new ResponseUtil(200,"Updated",null);
     }
 
     @GetMapping(path = "/{name}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil searchProduct(@PathVariable String name) {
-        ProductDTO customerDTO = productService.searchProduct(name);
-        return new ResponseUtil(200,"Found",customerDTO);
+        ProductDTO productDTO = productService.searchProduct(name);
+        return new ResponseUtil(200,"Found",productDTO);
     }
 }
