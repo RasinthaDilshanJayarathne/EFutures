@@ -36,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductDTO searchProduct(int id) {
+    public ProductDTO searchProduct(String name) {
         return null;
     }
 

@@ -42,9 +42,9 @@ public class ProductController {
         return new ResponseUtil(200,"Updated",null);
     }
 
-    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil searchProduct(@PathVariable int id) {
-        ProductDTO customerDTO = productService.searchProduct(id);
+    @GetMapping(path = "/{name}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchProduct(@PathVariable String name) {
+        ProductDTO customerDTO = productService.searchProduct(name);
         return new ResponseUtil(200,"Found",customerDTO);
     }
 }

@@ -11,7 +11,7 @@ public interface ProductService {
 
     public void updateProduct(ProductDTO dto);
 
-    public ProductDTO searchProduct(int id);
+    public ProductDTO searchProduct(String name);
 
     public List<ProductDTO> getAllProduct();
 }
