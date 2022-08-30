@@ -15,7 +15,6 @@
     <artifactId>EFutures</artifactId>
     <version>1.0.0</version>
     <name>EFutures</name>
-    <packaging>war</packaging>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
