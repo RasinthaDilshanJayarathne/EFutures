@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "7361530e-a658-40ed-bfc8-24cc75ef1500",
+		"name": "Practical Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/EFutures_war/v1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"EFutures_war",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Comment",
+			"item": []
+		},
+		{
+			"name": "Product Category",
+			"item": []
+		}
+	]
+}
