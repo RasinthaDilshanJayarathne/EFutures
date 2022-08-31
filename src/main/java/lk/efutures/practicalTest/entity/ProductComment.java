@@ -4,6 +4,8 @@ import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.sql.Timestamp;
 
 @AllArgsConstructor
@@ -18,4 +20,8 @@ public class ProductComment {
     private String comment;
     private Timestamp created_at;
     private int product_id;
+
+//    @ManyToOne
+//    @JoinColumn(name = "product_id",referencedColumnName = "id",insertable = false,updatable = false)
+//    private Product product;
 }

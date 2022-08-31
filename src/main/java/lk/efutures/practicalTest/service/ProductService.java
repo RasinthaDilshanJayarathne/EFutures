@@ -1,6 +1,8 @@
 package lk.efutures.practicalTest.service;
 
 import lk.efutures.practicalTest.dto.ProductDTO;
+import lk.efutures.practicalTest.entity.Product;
+import lk.efutures.practicalTest.entity.ProductCategory;
 
 import java.util.List;
 
@@ -11,7 +13,7 @@ public interface ProductService {
 
     public void updateProduct(ProductDTO dto);
 
-    public ProductDTO searchProduct(String name);
+    public List<Product> searchProduct(String name);
 
     public List<ProductDTO> getAllProduct();
 }

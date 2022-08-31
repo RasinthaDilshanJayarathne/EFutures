@@ -2,10 +2,10 @@ package lk.efutures.practicalTest.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,4 +22,11 @@ public class Product {
     private int product_category_id;
     private String status;
     private LocalDate launch_date;
+
+//    @ManyToOne
+//    @JoinColumn(name = "product_category_id",referencedColumnName = "id",insertable = false,updatable = false)
+//    private ProductCategory productCategory;
+
+//    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
+//    private List<ProductComment> productComments;
 }

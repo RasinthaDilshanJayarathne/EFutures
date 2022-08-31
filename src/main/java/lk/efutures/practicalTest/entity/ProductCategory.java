@@ -19,5 +19,9 @@ public class ProductCategory {
     private int product_category_id;
     private String name;
     private String description;
-    
+
+//    @OneToMany(mappedBy = "productCategory",cascade = CascadeType.ALL)
+//    private List<Product> products;
+
+
 }

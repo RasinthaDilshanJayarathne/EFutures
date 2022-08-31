@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="efutures@localhost" uuid="b5672910-50b4-47a5-b6b1-d0ea0670de97">
+    <data-source source="LOCAL" name="efuchers@localhost" uuid="c54170e4-ad3f-4b6f-9f5b-7cb262741dcc">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/efutures</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/efuchers</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
