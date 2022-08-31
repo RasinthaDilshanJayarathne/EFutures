@@ -50,12 +50,8 @@ public class ProductController {
 
     @GetMapping(path = "/{name}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil searchProduct(@PathVariable String name) {
-        //System.out.println(id);
-        //ProductDTO productDTO = productService.searchProduct(name);
         List<Product> product = productService.searchProduct(name);
         System.out.println(product);
-//        int product_category_id = productCategoryDTO.getProduct_category_id();
-//        System.out.println(product_category_id);
         return new ResponseUtil(200,"Found",product);
     }
 }

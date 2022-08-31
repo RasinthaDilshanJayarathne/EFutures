@@ -9,10 +9,6 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface ProductRepo extends JpaRepository<Product,Integer> {
-//    boolean existsByName(String name);
-//    Product findByName(String userName);
-//    boolean existsByProduct_category_id(int id);
-//    Product findByProduct_category_id (int id);
 
     @Query(value = "SELECT * FROM product WHERE product_category_id=product_category_id", nativeQuery = true)
     List<Product> getProduct(@Param("id") int product_category_id);
@@ -21,8 +17,4 @@ public interface ProductRepo extends JpaRepository<Product,Integer> {
     @Query(value = "SELECT * FROM product WHERE price >=price AND ", nativeQuery = true)
     List<Product> getProductByPrice(@Param("id") BigDecimal price);
 
-
-//    boolean existsByProduct_id(int id);
-//    Product findByProduct_id(int id);
-//    Product deleteByProduct_id(int id);
 }
