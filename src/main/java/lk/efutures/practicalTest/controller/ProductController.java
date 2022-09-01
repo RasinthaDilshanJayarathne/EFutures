@@ -8,6 +8,7 @@ import lk.efutures.practicalTest.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public class ProductController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveProduct(@RequestBody ProductDTO product){
+    public ResponseUtil saveProduct(@Validated @RequestBody ProductDTO product){
         productService.saveProduct(product);
         return new ResponseUtil(200,"Successfully Saved",product);
     }

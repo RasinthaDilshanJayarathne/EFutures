@@ -13,6 +13,9 @@ import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,10 +23,12 @@ import javax.persistence.OneToMany;
 @ToString
 public class ProductDTO {
     private int product_id;
+    @NotNull(message = "Name is mandatory")
     private String name;
     private String description;
     private BigDecimal price;
     //private int product_category_id;
+    @NotBlank(message = "Name is mandatory")
     private String status;
     private LocalDate launch_date;
     private ProductCategory productCategory;
