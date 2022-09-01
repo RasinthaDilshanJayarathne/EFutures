@@ -48,13 +48,13 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
         }
     }
 
-    @Override
-    public ProductCategoryDTO searchProductCategory(String name) {
-        if (productCategoryRepo.existsByName(name)){
-            String product = productCategoryRepo.findByName(name).getName();
-            return modelMapper.map(product, ProductCategoryDTO.class);
-        }else{
-            throw new NotFoundException("No Product For "+ name +" ..!");
-        }
-    }
+//    @Override
+//    public ProductCategoryDTO searchProductCategory(String name) {
+//        if (productCategoryRepo.existsByName(name)){
+//            String product = productCategoryRepo.findByName(name).getName();
+//            return modelMapper.map(product, ProductCategoryDTO.class);
+//        }else{
+//            throw new NotFoundException("No Product For "+ name +" ..!");
+//        }
+//    }
 }

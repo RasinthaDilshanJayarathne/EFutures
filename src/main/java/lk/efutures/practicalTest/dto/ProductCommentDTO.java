@@ -1,7 +1,10 @@
 package lk.efutures.practicalTest.dto;
 
+import lk.efutures.practicalTest.entity.Product;
 import lombok.*;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.sql.Timestamp;
 
 @AllArgsConstructor
@@ -12,7 +15,7 @@ import java.sql.Timestamp;
 public class ProductCommentDTO {
     private int product_comment_id;
     private String comment;
-    //2005-02-25 14:48:24.0 format
-    private Timestamp createdAt;
-    private int productId;
+    private Timestamp created_at;
+    //private int product_id;
+    private Product product;
 }

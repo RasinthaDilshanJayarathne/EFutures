@@ -2,9 +2,17 @@ package lk.efutures.practicalTest.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lk.efutures.practicalTest.entity.ProductCategory;
+import lk.efutures.practicalTest.entity.ProductComment;
 import lombok.*;
+
+import javax.persistence.CascadeType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,8 +23,19 @@ public class ProductDTO {
     private String name;
     private String description;
     private BigDecimal price;
-    private int product_category_id;
+    //private int product_category_id;
     private String status;
-    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate launch_date;
+    private ProductCategory productCategory;
+    //private List<ProductComment> productComments;
+
+
+    public ProductDTO(int product_id, String name, String description, BigDecimal price, String status, LocalDate launch_date) {
+        this.product_id = product_id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.status = status;
+        this.launch_date = launch_date;
+    }
 }

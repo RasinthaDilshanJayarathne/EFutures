@@ -12,5 +12,5 @@ public interface ProductCategoryService {
 
     public List<ProductCategoryDTO> getAllProductCategory();
 
-    public ProductCategoryDTO searchProductCategory(String name);
+    //public ProductCategoryDTO searchProductCategory(String name);
 }

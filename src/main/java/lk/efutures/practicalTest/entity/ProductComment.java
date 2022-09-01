@@ -16,9 +16,9 @@ public class ProductComment {
     private int product_comment_id;
     private String comment;
     private Timestamp created_at;
-    private int product_id;
+    //private int product_id;
 
-//    @ManyToOne
-//    @JoinColumn(name = "product_id",referencedColumnName = "id",insertable = false,updatable = false)
-//    private Product product;
+    @ManyToOne
+    @JoinColumn(name = "product_id",referencedColumnName = "product_id")
+    private Product product;
 }

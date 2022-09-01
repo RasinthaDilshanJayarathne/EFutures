@@ -58,11 +58,15 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> searchProduct(String name) {
-        int id = productCategoryRepo.getCategoryById(name);
+    public List<ProductDTO> searchProduct(String name) {
+        int id = productCategoryRepo.getCategoryName(name);
         if (id > 0){
-            List<Product> product = productRepo.getProduct(id);
-            return product;
+
+
+
+            System.out.println(productRepo.getProduct(id));
+            return modelMapper.map(productRepo.getProduct(id), new TypeToken<List<ProductDTO>>() {}.getType());
+
         }else{
             throw new NotFoundException("No Product For "+ name +" ..!");
         }

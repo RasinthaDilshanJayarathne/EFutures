@@ -12,7 +12,7 @@ public interface ProductService {
 
     public void updateProduct(ProductDTO dto);
 
-    public List<Product> searchProduct(String name);
+    public List<ProductDTO> searchProduct(String name);
 
     public List<ProductDTO> getAllProduct();
 }
