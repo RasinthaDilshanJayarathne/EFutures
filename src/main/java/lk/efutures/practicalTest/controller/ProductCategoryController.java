@@ -18,14 +18,14 @@ public class ProductCategoryController {
     ProductCategoryService productCategoryService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllProduct(){
+    public ResponseUtil getAllProductCategory(){
         return new ResponseUtil(200,"Successfully Loaded",productCategoryService.getAllProductCategory());
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveProduct(@ModelAttribute ProductCategoryDTO productCategory){
+    public ResponseUtil saveProductCategory(@RequestBody ProductCategoryDTO productCategory){
         productCategoryService.saveProductCategory(productCategory);
-        return new ResponseUtil(200,"Saved",null);
+        return new ResponseUtil(200,"Successfully Saved",productCategory);
     }
 }

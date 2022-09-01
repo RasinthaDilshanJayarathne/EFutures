@@ -9,8 +9,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 @ToString
 @Entity
 public class Product {
@@ -21,7 +20,7 @@ public class Product {
     private BigDecimal price;
     private int product_category_id;
     private String status;
-    private LocalDate launch_date;
+    private LocalDate launchDate;
 
 //    @ManyToOne
 //    @JoinColumn(name = "product_category_id",referencedColumnName = "id",insertable = false,updatable = false)

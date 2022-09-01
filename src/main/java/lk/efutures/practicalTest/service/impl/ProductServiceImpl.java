@@ -32,8 +32,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void saveProduct(ProductDTO dto) {
         if (!productRepo.existsById(dto.getProduct_id())) {
-            Product map = modelMapper.map(dto, Product.class);
-            productRepo.save(map);
+            productRepo.save(modelMapper.map(dto,Product.class));
         } else {
             throw new DuplicateException("Product Already Exist..!");
         }
@@ -44,7 +43,7 @@ public class ProductServiceImpl implements ProductService {
         if (productRepo.existsById(id)){
             productRepo.deleteById(id);
         }else{
-            throw new NotFoundException("Please check the Customer ID.. No Such Customer..!");
+            throw new NotFoundException("Please check the Product ID.. No Such Product..!");
         }
     }
 

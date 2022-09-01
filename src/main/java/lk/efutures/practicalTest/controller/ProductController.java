@@ -1,6 +1,5 @@
 package lk.efutures.practicalTest.controller;
 
-import lk.efutures.practicalTest.dto.ProductCategoryDTO;
 import lk.efutures.practicalTest.dto.ProductDTO;
 import lk.efutures.practicalTest.entity.Product;
 import lk.efutures.practicalTest.service.ProductCategoryService;
@@ -31,21 +30,21 @@ public class ProductController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil saveProduct(@ModelAttribute ProductDTO product){
+    public ResponseUtil saveProduct(@RequestBody ProductDTO product){
         productService.saveProduct(product);
-        return new ResponseUtil(200,"Saved",null);
+        return new ResponseUtil(200,"Successfully Saved",product);
     }
 
     @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil deleteProduct(@RequestParam int id) {
         productService.deleteProduct(id);
-        return new ResponseUtil(200,"Deleted",null);
+        return new ResponseUtil(200,"Successfully Deleted",id);
     }
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateProduct(@RequestBody ProductDTO product){
         productService.updateProduct(product);
-        return new ResponseUtil(200,"Updated",null);
+        return new ResponseUtil(200,"Successfully Updated",product);
     }
 
     @GetMapping(path = "/{name}",produces = MediaType.APPLICATION_JSON_VALUE)
