@@ -17,7 +17,11 @@ public class ProductCategory {
     private String name;
     private String description;
 
-//    @OneToMany(mappedBy = "productCategory",cascade = CascadeType.ALL)
+    public ProductCategory(int product_category_id) {
+        this.product_category_id = product_category_id;
+    }
+
+    //    @OneToMany(mappedBy = "productCategory",cascade = CascadeType.ALL)
 //    private List<Product> products;
 
 

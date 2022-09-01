@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -62,10 +63,21 @@ public class ProductServiceImpl implements ProductService {
         int id = productCategoryRepo.getCategoryName(name);
         if (id > 0){
 
+//            ArrayList<ProductDTO> productArrayList = new ArrayList<>();
+//            for (Product dto : productRepo.getProductsByProductCategoryEquals(new ProductCategory(id))) {
+//                productArrayList.add(new ProductDTO(
+//                       dto.getProduct_id(),
+//                        dto.getName(),
+//                        dto.getDescription(),
+//                        dto.getPrice(),
+//                        dto.getStatus(),
+//                        dto.getLaunch_date()
+//                ));
+//            }
+//            return productArrayList;
 
-
-            System.out.println(productRepo.getProduct(id));
-            return modelMapper.map(productRepo.getProduct(id), new TypeToken<List<ProductDTO>>() {}.getType());
+//            System.out.println(productRepo.getProduct(id));
+            return modelMapper.map(productRepo.getProductsByProductCategoryEquals(new ProductCategory(id)), new TypeToken<List<ProductDTO>>() {}.getType());
 
         }else{
             throw new NotFoundException("No Product For "+ name +" ..!");

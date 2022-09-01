@@ -17,4 +17,9 @@ public class ProductCategoryDTO {
     private String name;
     private String description;
     //private List<Product> products;
+
+
+    public ProductCategoryDTO(int product_category_id) {
+        this.product_category_id = product_category_id;
+    }
 }
